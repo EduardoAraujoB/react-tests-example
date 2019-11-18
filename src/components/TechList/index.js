@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 // import { Container } from './styles';
 
@@ -6,7 +6,7 @@ export default function TechList() {
   const [techs, setTechs] = useState([]);
 
   function handleAddTech() {
-    setTechs([...techs, "Node.js"]);
+    setTechs([...techs, 'Node.js']);
   }
 
   return (
