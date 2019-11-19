@@ -35,6 +35,7 @@
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",
     "prefer-object-spread": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   }
 }
