@@ -9,6 +9,7 @@
 <ul>
   <li>React</li>
   <li>Jest</li>
+  <li>Redux</li>
   <li>Testing Library</li>
   <li>Eslint</li>
   <li>Prettier</li>
