@@ -22,10 +22,10 @@
     <span>Used to run the development server over http://localhost:3000</span>
   </li>
   <li>
-  <li>
     <code>yarn test</code>
     <span>run the tests and the <code>coverage</code> of the aplication</span>
   </li>
+  <li>
     <code>yarn build</code>
     <span>Used to get a production build on the <code>build</code> folder</span>
   </li>
