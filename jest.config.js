@@ -124,6 +124,7 @@ module.exports = {
   setupFilesAfterEnv: [
     '@testing-library/jest-dom/extend-expect',
     'jest-localstorage-mock',
+    '<rootDir>/__tests__/setupTests.js',
   ],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing

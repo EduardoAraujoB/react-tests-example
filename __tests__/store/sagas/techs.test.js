@@ -1,14 +1,34 @@
 import { runSaga } from 'redux-saga';
+import MockAdapter from 'axios-mock-adapter';
 
-import { getTechsSuccess } from '../../../src/store/modules/techs/actions';
+import api from '../../../src/services/api';
+
+import {
+  getTechsSuccess,
+  getTechsFailure,
+} from '../../../src/store/modules/techs/actions';
 import { getTechs } from '../../../src/store/modules/techs/sagas';
+
+const apiMock = new MockAdapter(api);
 
 describe('Techs saga', () => {
   it('should be able to fetch techs', async () => {
     const dispatch = jest.fn();
 
+    apiMock.onGet('techs').reply(200, ['Node.js']);
+
     await runSaga({ dispatch }, getTechs).toPromise();
 
     expect(dispatch).toHaveBeenCalledWith(getTechsSuccess(['Node.js']));
+  });
+
+  it('should fail when the api returns an error', async () => {
+    const dispatch = jest.fn();
+
+    apiMock.onGet('techs').reply(500, ['Node.js']);
+
+    await runSaga({ dispatch }, getTechs).toPromise();
+
+    expect(dispatch).toHaveBeenCalledWith(getTechsFailure());
   });
 });
